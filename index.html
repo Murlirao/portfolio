@@ -8,34 +8,31 @@
   <style>
     /* General Styles */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f9fa;
-      color: #2d3436;
+      background: #0a192f;
+      color: #ccd6f6;
+      overflow-x: hidden;
     }
 
+    /* Header Section */
     header {
-      background: linear-gradient(135deg, #2c3e50, #3498db);
-      color: white;
-      padding: 120px 20px;
+      background: linear-gradient(135deg, #0a192f, #112240);
+      padding: 100px 20px;
       text-align: center;
       position: relative;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
     }
 
-    .profile-img {
+    .profile-rectangle {
       width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      border: 5px solid white;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      margin-bottom: 30px;
-      animation: float 3s ease-in-out infinite;
+      height: 250px;
+      background: url('https://i.imgur.com/ROMbynm.jpg') center center/cover;
+      margin: 0 auto 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      animation: float 4s ease-in-out infinite;
     }
 
     @keyframes float {
@@ -44,13 +41,14 @@
     }
 
     header h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       margin: 0;
       letter-spacing: 2px;
+      color: #64ffda;
     }
 
     header p {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       margin: 15px 0 25px;
       opacity: 0.9;
     }
@@ -60,12 +58,12 @@
       align-items: center;
       padding: 12px 25px;
       margin: 10px;
-      background: linear-gradient(45deg, #e74c3c, #c0392b);
-      color: white;
+      background: linear-gradient(45deg, #64ffda, #00b894);
+      color: #0a192f;
       text-decoration: none;
       border-radius: 30px;
       transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     .btn i {
@@ -74,11 +72,12 @@
 
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 
+    /* Sections */
     section {
-      padding: 80px 20px;
+      padding: 100px 20px;
       text-align: center;
     }
 
@@ -87,6 +86,7 @@
       margin-bottom: 50px;
       position: relative;
       display: inline-block;
+      color: #64ffda;
     }
 
     h2::after {
@@ -97,11 +97,15 @@
       transform: translateX(-50%);
       width: 60px;
       height: 4px;
-      background: #3498db;
+      background: #64ffda;
       border-radius: 2px;
     }
 
     /* About Me Section */
+    #about {
+      background: linear-gradient(135deg, #112240, #0a192f);
+    }
+
     #about p {
       font-size: 1.2rem;
       max-width: 800px;
@@ -117,6 +121,10 @@
     }
 
     /* Skills Section */
+    #skills {
+      background: linear-gradient(135deg, #0a192f, #112240);
+    }
+
     .skills-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -126,10 +134,10 @@
     }
 
     .skill-card {
-      background: white;
+      background: rgba(255, 255, 255, 0.05);
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       transition: all 0.3s ease;
       opacity: 0;
       transform: translateY(20px);
@@ -142,18 +150,19 @@
 
     .skill-card:hover {
       transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.1);
     }
 
     .skill-icon {
       font-size: 2.5rem;
-      color: #3498db;
+      color: #64ffda;
       margin-bottom: 15px;
     }
 
     .skill-card h3 {
       margin: 0 0 15px;
       font-size: 1.4rem;
-      color: #2c3e50;
+      color: #ccd6f6;
     }
 
     .skill-tags {
@@ -164,14 +173,18 @@
     }
 
     .skill-tag {
-      background: #f1f2f6;
+      background: rgba(255, 255, 255, 0.1);
       padding: 5px 15px;
       border-radius: 20px;
       font-size: 0.9rem;
-      color: #2d3436;
+      color: #ccd6f6;
     }
 
     /* Projects Section */
+    #projects {
+      background: linear-gradient(135deg, #112240, #0a192f);
+    }
+
     .projects-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -181,10 +194,10 @@
     }
 
     .project-card {
-      background: white;
+      background: rgba(255, 255, 255, 0.05);
       padding: 25px;
       border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       transition: all 0.3s ease;
       opacity: 0;
       transform: translateY(20px);
@@ -197,35 +210,41 @@
 
     .project-card:hover {
       transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.1);
     }
 
     .project-card h3 {
       font-size: 1.5rem;
       margin-bottom: 15px;
-      color: #2c3e50;
+      color: #64ffda;
     }
 
     .project-card p {
       font-size: 1rem;
       line-height: 1.6;
       margin-bottom: 20px;
+      color: #ccd6f6;
     }
 
     .project-card a {
       display: inline-block;
       padding: 10px 20px;
-      background: #3498db;
-      color: white;
+      background: #64ffda;
+      color: #0a192f;
       text-decoration: none;
       border-radius: 5px;
       transition: background 0.3s ease;
     }
 
     .project-card a:hover {
-      background: #2980b9;
+      background: #00b894;
     }
 
     /* Education Section */
+    #education {
+      background: linear-gradient(135deg, #0a192f, #112240);
+    }
+
     .timeline {
       max-width: 800px;
       margin: 0 auto;
@@ -233,10 +252,10 @@
     }
 
     .timeline-item {
-      background: white;
+      background: rgba(255, 255, 255, 0.05);
       padding: 25px;
       border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       margin-bottom: 30px;
       opacity: 0;
       transform: translateX(-100%);
@@ -251,15 +270,20 @@
     .timeline-item h3 {
       font-size: 1.5rem;
       margin-bottom: 10px;
-      color: #2c3e50;
+      color: #64ffda;
     }
 
     .timeline-item p {
       font-size: 1rem;
       line-height: 1.6;
+      color: #ccd6f6;
     }
 
     /* Contact Section */
+    #contact {
+      background: linear-gradient(135deg, #112240, #0a192f);
+    }
+
     form {
       max-width: 600px;
       margin: 0 auto;
@@ -270,12 +294,18 @@
 
     form input, form textarea {
       padding: 12px;
-      border: 1px solid #ccc;
+      border: 1px solid #64ffda;
       border-radius: 5px;
       font-size: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      color: #ccd6f6;
       opacity: 0;
       transform: translateY(20px);
       transition: all 0.5s ease;
+    }
+
+    form input::placeholder, form textarea::placeholder {
+      color: #ccd6f6;
     }
 
     form input.visible, form textarea.visible {
@@ -285,8 +315,8 @@
 
     form button {
       padding: 12px;
-      background: #3498db;
-      color: white;
+      background: #64ffda;
+      color: #0a192f;
       border: none;
       border-radius: 5px;
       font-size: 1rem;
@@ -295,17 +325,14 @@
     }
 
     form button:hover {
-      background: #2980b9;
+      background: #00b894;
     }
   </style>
 </head>
 <body>
   <!-- Header Section -->
   <header>
-    
-    <img src="https://i.imgur.com/ROMbynm.jpg" alt="Murlidhar Rao" class="profile-img">
-
-
+    <div class="profile-rectangle"></div>
     <h1>NAGANKHERA MURLIDHAR RAO</h1>
     <p>Embedded Systems Engineer | Hardware Designer | IoT Developer</p>
     <div>
@@ -325,7 +352,7 @@
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I am Murli , a passionate and motivated BTech student specializing in Electronics and Communication Engineering (ECE) at SR University. My academic journey has provided me with a strong foundation in both theoretical and practical aspects of digital and analog electronics.Enthusiastic and dedicated fresher in Embedded Systems Engineering with a solid foundation in electronics and communication principles. Skilled in various programming languages including C, Python, and Java, with an analytical mindset and effective problem-solving abilities. Passionate about innovation and eager to contribute to cutting-edge projects in the field of embedded systems.
+      I am Murli, a passionate and motivated BTech student specializing in Electronics and Communication Engineering (ECE) at SR University. My academic journey has provided me with a strong foundation in both theoretical and practical aspects of digital and analog electronics. Enthusiastic and dedicated fresher in Embedded Systems Engineering with a solid foundation in electronics and communication principles. Skilled in various programming languages including C, Python, and Java, with an analytical mindset and effective problem-solving abilities. Passionate about innovation and eager to contribute to cutting-edge projects in the field of embedded systems.
     </p>
   </section>
 
@@ -459,14 +486,6 @@
     document.querySelectorAll('.skill-card, .project-card, .timeline-item, form input, form textarea').forEach(element => {
       observer.observe(element);
     });
-
-    // Header Floating Animation
-    const profileImg = document.querySelector('.profile-img');
-    function animateFloat() {
-      profileImg.style.transform = `translateY(${Math.sin(Date.now() / 800) * 10}px)`;
-      requestAnimationFrame(animateFloat);
-    }
-    animateFloat();
   </script>
 </body>
 </html>
